@@ -10,22 +10,22 @@ class DateToTextClass():
 		self.time = splitted[1].split(':')
 
 	def convert(self):
-		"""
+	"""
 	    Transforms date in numerical format into russian text.
 	    Returns (str): russian text
-    """
+    	"""
 		day = self.date[0]
 		month = self.date[1]
 		year = self.date[2]
 		return self.convertDay(day) + ' ' + self.convertMonth(month) + ' ' + self.convertYear(year) + self.convertTime(self.time)
 
 	def convertTime(self, time):
-		"""
+	"""
 	    Transforms time in numerical format into russian text.
 	    Args:
 	    	time (str[]): contains hours, minutes and seconds as elements of an array, should be ['HH', 'MM', 'SS']
 	    Returns (str): russian text
-    """
+    	"""
 		unitDict = {
 			'0': 'ноль',
 			'1': 'одна',
@@ -76,12 +76,12 @@ class DateToTextClass():
 		return res
 
 	def convertDay(self, day):
-		"""
+	"""
 	    Transforms day in numerical format into russian text.
 	    Args:
 	    	day (str): should be in format DD
 	    Returns (str): russian text
-    """
+    	"""
 		res = ''
 		unitDict = {
 			'1': 'первое',
@@ -107,12 +107,12 @@ class DateToTextClass():
 			return res != '' and res + ' ' + unit or unit
 
 	def convertYear(self, year):
-		"""
+	"""
 	    Transforms year in numerical format into russian text.
 	    Args:
 	    	year (str): should be in format YYYY
 	    Returns (str): russian text
-    """
+    	"""
 		unitDict = {
 			'0': '',
 			'1': 'первого',
@@ -150,12 +150,12 @@ class DateToTextClass():
 		return res + ' года'
 
 	def convertMonth(self, month):
-		"""
+	"""
 	    Transforms month in numerical format into russian text.
 	    Args:
 	    	month (str): should be in format MM
 	    Returns (str): russian text
-    """
+    	"""
 		monthDict = {
 		'01': 'января',
 		'02': 'февраля',
@@ -173,13 +173,13 @@ class DateToTextClass():
 		return monthDict.get(month)
 
 	def getThousandWord(self, num, mod = 1):
-		"""
+	"""
 	    Transforms number of thousands into russian text.
 	    Args:
 	    	num (str): number of thousands
 				mod (number): defines type of noun
 	    Returns (str): russian text
-    """
+    	"""
 		dictOfThousand = {
 			'0': '',
 			'1': 'тысяча/тысячного',
@@ -193,13 +193,13 @@ class DateToTextClass():
 			return words[0]
 
 	def getHundredWord(self, num, mod):
-		"""
+	"""
 	    Transforms number of hundreds into russian text.
 	    Args:
 	    	num (str): number of hundreds
 				mod (number): defines type of noun
 	    Returns (str): russian text
-    """
+   	"""
 		dictOfHundred = {
 			'0': '/',
 			'1': 'сто/',
@@ -221,13 +221,13 @@ class DateToTextClass():
 			return words[0]
 
 	def getDozenWord(self, num, mod):
-		"""
+	"""
 	    Transforms number of dozens into russian text.
 	    Args:
 	    	num (str): number of dozens
 				mod (number): defines type of noun
 	    Returns (str): russian text
-    """
+    	"""
 		dictOfDozens = {
 			'0': '',
 			'2': 'двадцат',
@@ -251,13 +251,13 @@ class DateToTextClass():
 			return res
 
 	def get10Word(self, num, mod):
-		"""
+	"""
 	    Transforms number in range from 10 to 19 into russian text.
 	    Args:
 	    	num (str): number of dozens
 				mod (number): defines type of noun
 	    Returns (str): russian text
-    """
+    	"""
 		dictOf10 = {
 			'10': 'десят',
 			'11': 'одиннадцат',
